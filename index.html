@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS098py0pYJQlLivUPwE4l0TqQ1cWgy9ByzCg&s" type="image/x-icon">
-    <title>Jogo da Velha</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
-<body class="bg-light d-flex flex-column align-items-center justify-content-center min-vh-100">
-    <div id="main" class="text-center"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
+<body>
+  
+  <div id="tela-inicio" class="tela ativa">
+    <h1>JOGO DA VELHA</h1>
+    <div class="menu">
+      <button id="btnIniciar">INICIAR</button>
+      <button id="btnComo">COMO JOGAR</button>
+    </div>
+  </div>
+
+  <div id="tela-como" class="overlay">
+    <div class="caixa">
+      <h2>COMO JOGAR</h2>
+      <p>Jogador 1 é X. Jogador 2 é O. Jogam alternadamente. Vence quem formar linha, coluna ou diagonal. Se o tabuleiro encher, é empate.</p>
+      <button id="btnFecharComo" class="btnPopup">FECHAR</button>
+    </div>
+  </div>
+
+  <div id="tela-jogo" class="tela">
+
+    <div class="placar">
+      <span>Pontos do Player 1: <b id="placar1">0</b></span>
+      <span>Pontos do Player 2: <b id="placar2">0</b></span>
+    </div>
+
+    <h1>VEZ DO JOGADOR <span id="vezJogador">1</span></h1>
+    
+    <ul id="tabuleiro" class="grade"></ul>
+  </div>
+
+  <div id="popup-final" class="overlay">
+    <div class="caixa">
+      <h2 id="titulo-final">FIM DO JOGO</h2>
+      <p id="texto-final"></p>
+      <div class="botoes-final">
+        <button id="btnReiniciar" class="botao-final roxo">REINICIAR</button>
+        <button id="btnVoltar" class="botao-final vermelho">VOLTAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
